@@ -3,13 +3,15 @@
 
 Name:           simplyhtml
 Version:        0.12.2
-Release:        %mkrel 0.0.1
+Release:        %mkrel 0.0.2
 Epoch:          0
 Summary:        Application and a java component for rich text processing
 License:        GPL
 Group:          Development/Java
 URL:            http://simplyhtml.sourceforge.net/
 Source0:        http://downloads.sourceforge.net/sourceforge/simplyhtml/shtml_0_12_2_beta1.zip
+Requires:       gnu-regexp
+Requires:       javahelp2
 BuildRequires:  ant
 BuildRequires:  gnu-regexp
 BuildRequires:  javahelp2
@@ -36,7 +38,7 @@ Javadoc documentation for %{name}.
 
 %prep
 %setup -q -n dist
-%{_bindir}/find . -name '*.jar' | %{_bindir}/xargs -tt %{__rm}
+%{_bindir}/find . -name '*.jar' | %{_bindir}/xargs -t %{__rm}
 
 %{_bindir}/find . -type f -name '*.htm' | \
   %{_bindir}/xargs -t %{__perl} -pi -e 's/\r$//g'
