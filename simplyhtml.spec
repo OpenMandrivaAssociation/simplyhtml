@@ -3,7 +3,7 @@
 
 Name:           simplyhtml
 Version:        0.12.2
-Release:        %mkrel 0.0.2
+Release:        %mkrel 0.0.3
 Epoch:          0
 Summary:        Application and a java component for rich text processing
 License:        GPL
@@ -63,14 +63,16 @@ cd ..
 %{__rm} -rf %{buildroot}
 
 %{__mkdir_p} %{buildroot}%{_javadir}
+
 %{__cp} -a dist/lib/SimplyHTML.jar %{buildroot}%{_javadir}/%{name}-%{version}.jar
 %{__ln_s} %{name}-%{version}.jar %{buildroot}%{_javadir}/%{name}.jar
 %{__ln_s} %{name}-%{version}.jar %{buildroot}%{_javadir}/SimplyHTML-%{version}.jar
-%{__ln_s} %{short_name}-%{version}.jar %{buildroot}%{_javadir}/SimplyHTML.jar
+%{__ln_s} SimplyHTML-%{version}.jar %{buildroot}%{_javadir}/SimplyHTML.jar
+
 %{__cp} -a dist/lib/SimplyHTMLHelp.jar %{buildroot}%{_javadir}/%{name}-help-%{version}.jar
-%{__ln_s} %{name}-%{version}.jar %{buildroot}%{_javadir}/%{name}-help.jar
-%{__ln_s} %{name}-%{version}.jar %{buildroot}%{_javadir}/SimplyHTMLHelp-%{version}.jar
-%{__ln_s} %{short_name}-%{version}.jar %{buildroot}%{_javadir}/SimplyHTMLHelp.jar
+%{__ln_s} %{name}-help-%{version}.jar %{buildroot}%{_javadir}/%{name}-help.jar
+%{__ln_s} %{name}-help-%{version}.jar %{buildroot}%{_javadir}/SimplyHTMLHelp-%{version}.jar
+%{__ln_s} SimplyHTMLHelp-%{version}.jar %{buildroot}%{_javadir}/SimplyHTMLHelp.jar
 
 %{__mkdir_p} %{buildroot}%{_javadocdir}/%{name}-%{version}
 %{__cp} -a dist/api/* %{buildroot}%{_javadocdir}/%{name}-%{version}
