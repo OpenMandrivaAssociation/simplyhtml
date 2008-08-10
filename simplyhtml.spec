@@ -2,14 +2,17 @@
 %define section free
 
 Name:           simplyhtml
-Version:        0.12.2
-Release:        %mkrel 0.0.3
+Version:        0.12.3
+Release:        %mkrel 0.0.1
 Epoch:          0
 Summary:        Application and a java component for rich text processing
-License:        GPL
+License:        GPLv2+
 Group:          Development/Java
 URL:            http://simplyhtml.sourceforge.net/
-Source0:        http://downloads.sourceforge.net/sourceforge/simplyhtml/shtml_0_12_2_beta1.zip
+# cvs -z3 -d:pserver:guest@simplyhtml.cvs.sourceforge.net:/cvsroot/simplyhtml export -r shtml_0_12_3 shtml
+# mv shtml simplyhtml-0.12.3
+# tar cjf simplyhtml-0.12.3.tar.bz2 simplyhtml-0.12.3
+Source0:        http://downloads.sourceforge.net/sourceforge/simplyhtml/simplyhtml-%{version}.tar.bz2
 Requires:       gnu-regexp
 Requires:       javahelp2
 BuildRequires:  ant
@@ -37,7 +40,7 @@ Group:          Development/Java
 Javadoc documentation for %{name}.
 
 %prep
-%setup -q -n dist
+%setup -q
 %{_bindir}/find . -name '*.jar' | %{_bindir}/xargs -t %{__rm}
 
 %{_bindir}/find . -type f -name '*.htm' | \
