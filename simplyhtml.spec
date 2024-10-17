@@ -8,7 +8,7 @@ Epoch:          0
 Summary:        Application and a java component for rich text processing
 License:        GPLv2+
 Group:          Development/Java
-URL:            http://simplyhtml.sourceforge.net/
+URL:            https://simplyhtml.sourceforge.net/
 # cvs -z3 -d:pserver:guest@simplyhtml.cvs.sourceforge.net:/cvsroot/simplyhtml export -r shtml_0_12_3 shtml
 # mv shtml simplyhtml-0.12.3
 # tar cjf simplyhtml-0.12.3.tar.bz2 simplyhtml-0.12.3
